@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+/* --- 기본 & 색상 설정 --- */
+:root {
+    --main-bg-color: #f4f4f4;
+    --point-color: #2ecc71; /* 녹색 */
+    --text-color: #333;
+    --card-bg-color: #ffffff;
+    --header-bg-color: rgba(255, 255, 255, 0.9);
+    --footer-bg-color: #34495e; /* 어두운 회색 */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --- 헤더 & 네비게이션 --- */
+header {
+    background-color: var(--header-bg-color);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    backdrop-filter: blur(5px);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 60px;
+}
+
+.nav-logo {
+    font-weight: 700;
+    font-size: 1.5em;
+    color: var(--point-color);
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 10px 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--point-color);
+}
+
+/* --- 공통 섹션 스타일 --- */
+section {
+    padding: 100px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background-color: var(--point-color);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* --- 개별 섹션 스타일 --- */
+
+/* 홈 섹션 */
+#home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+#home h1 {
+    font-size: 4em;
+    margin-bottom: 10px;
+}
+
+#home .slogan {
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #555;
+}
+
+/* 소개 섹션 */
+#about .about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+#about h3 {
+    margin-top: 40px;
+    margin-bottom: 15px;
+    color: var(--point-color);
+}
+#about ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* 기술 섹션 */
+.skills-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    text-align: center;
+}
+
+.skill-card {
+    background: var(--card-bg-color);
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    flex-basis: 30%;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+.skill-card i {
+    font-size: 3em;
+    color: var(--point-color);
+    margin-bottom: 20px;
+}
+.skill-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* 프로젝트 섹션 */
+.projects-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+.project-card {
+    background: var(--card-bg-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.project-card h3 {
+    font-size: 1.8em;
+    color: var(--point-color);
+    margin-bottom: 15px;
+}
+.project-skills {
+    margin: 20px 0;
+}
+.project-skills span {
+    background-color: #e0e0e0;
+    color: #555;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    margin-right: 10px;
+}
+.project-link {
+    text-decoration: none;
+    color: var(--point-color);
+    font-weight: 700;
+    transition: all 0.3s;
+}
+.project-link:hover {
+    padding-left: 5px;
+}
+
+/* 연락처 섹션 */
+#contact {
+    text-align: center;
+}
+#contact p {
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+.contact-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    background: var(--card-bg-color);
+    padding: 15px 25px;
+    margin: 0 10px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s;
+    font-size: 1.1em;
+}
+.contact-links a:hover {
+    background-color: var(--point-color);
+    color: white;
+}
+.contact-links a i {
+    margin-right: 10px;
+}
+
+/* --- 푸터 --- */
+footer {
+    background-color: var(--footer-bg-color);
+    color: #ccc;
+    text-align: center;
+    padding: 20px;
+}
+
+/* --- 반응형 웹 (모바일) --- */
+@media (max-width: 768px) {
+    h2 { font-size: 2em; }
+    #home h1 { font-size: 2.5em; }
+    #home .slogan { font-size: 1.2em; }
+    nav ul { display: none; } /* 모바일에서는 메뉴 숨김 (간단한 버전) */
+    .skills-container { flex-direction: column; }
+    .contact-links a { display: block; margin: 10px 0; }
+}
